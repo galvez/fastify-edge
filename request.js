@@ -26,12 +26,16 @@ const kBody = Symbol('kBody');
 export const readBody = Symbol('readBody');
 
 export default class FastifyEdgeRequest {
+  url = null
   query = null
   body = null
   params = null
   headers = null
   raw = null
   constructor (request, url, route) {
+    this.url = `${url.pathname}${url.search}`
+    this.hostname = this.url.hostname;
+    this.protocol = this.url.protocol.replace(':', '');
     this.raw = request;
     this.query = new Proxy(url.searchParams, {
       get: (params, param) => params.get(param),
