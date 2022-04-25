@@ -276,7 +276,7 @@ Defaults to the HTTP **302 Found** response code.
 <tr>
 <td>
 
-`req.type(contentType)`
+`reply.type(contentType)`
 
 </td>
 <td>
@@ -288,7 +288,7 @@ Sets the `content-type` header for the `fetch` response object.
 <tr>
 <td>
 
-`req.send(data)`
+`reply.send(data)`
 
 </td>
 <td>
