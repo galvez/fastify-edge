@@ -102,7 +102,7 @@ The raw `fetch` request object.
 
 <table>
 <tr>
-<td>
+<td width="35%">
 
 `reply.code(code)`
 
