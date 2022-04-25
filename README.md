@@ -32,6 +32,66 @@ See [`example/`](https://github.com/galvez/fastify-edge/tree/main/example) with 
 
 ## Supported APIs
 
+### Request
+
+<table>
+<tr>
+<td>
+  
+`query`
+
+</td>
+<td>
+  
+Maps to the `fetch` request URL's `searchParams` object through a `Proxy`.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`body`
+
+</td>
+<td>
+
+The consumed body following the parsing pattern from [this example](https://developers.cloudflare.com/workers/examples/read-post/).
+
+</td>
+</tr>
+<tr>
+<td>
+
+`params`
+
+</td>
+<td>
+  
+The parsed route params from the internal Radix-tree router, **[radix3](https://github.com/unjs/radix3)**.
+  
+</td>
+</tr>
+<tr>
+<td>
+
+`headers`
+
+</td>
+<td>
+Maps to the `fetch` request `headers` object through a `Proxy`.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`raw`
+
+</td>
+<td>The raw `fetch` Request object</td>
+</tr>
+</table>
+
 ## Supported hooks
 
 The original Fastify `onRequest`, `onSend` and `onResponse` are supported.
