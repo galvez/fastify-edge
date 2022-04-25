@@ -1,6 +1,6 @@
 # fastify-edge
 
-An experimental lightweight worker version of Fastify.
+An experimental **lightweight worker version** of [Fastify](https://fastify.io).
 
 Currently **Cloudflare Workers** are supported.
 
@@ -28,8 +28,9 @@ app.get('/', (req, reply) => {
 })
 ```
 
-## Supported APIs
+See [`example/`](https://github.com/galvez/fastify-edge/tree/main/example) with [`miniflare`](https://github.com/cloudflare/miniflare).
 
+## Supported APIs
 
 ## Supported hooks
 
