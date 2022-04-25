@@ -188,7 +188,7 @@ Asserts presence of an individual header in the `fetch` response `headers` objec
 <tr>
 <td>
 
-`reply.redirect([code,] dest)`<br>
+`reply.redirect(code, dest)`<br>
 `reply.redirect(dest)`
 
 </td>
