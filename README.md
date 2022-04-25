@@ -116,7 +116,7 @@ Sets the `fetch` response `status` property.
 <tr>
 <td>
 
-`reply.header(header, value)`
+`reply.header(key, value)`
 
 </td>
 <td>
@@ -140,7 +140,7 @@ Adds multiple headers to the `fetch` response `headers` object.
 <tr>
 <td>
 
-`reply.getHeader(header)`
+`reply.getHeader(key)`
 
 </td>
 <td>
@@ -164,7 +164,7 @@ Retrieves all headers from `fetch` response `headers` object.
 <tr>
 <td>
 
-`reply.removeHeader(header)`
+`reply.removeHeader(key)`
 
 </td>
 <td>
