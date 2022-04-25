@@ -32,6 +32,16 @@ See [`example/`](https://github.com/galvez/fastify-edge/tree/main/example) with 
 
 ## Supported APIs
 
+### Server
+
+- `app.addHook(hook, function)`
+- `app.route(settings)`
+- `app.get(path, handlerOrSettings)`
+- `app.post(path, handlerOrSettings)`
+- `app.put(path, handlerOrSettings)`
+- `app.delete(path, handlerOrSettings)`
+- `app.options(path, handlerOrSettings)`
+
 ### Request
 
 <table>
