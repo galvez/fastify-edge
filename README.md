@@ -2,7 +2,9 @@
 
 An experimental lightweight worker version of Fastify.
 
-Currently **Cloudflare Workers** are supported but **Deno Deploy** support can come next.
+Currently **Cloudflare Workers** are supported.
+
+**Deno Deploy** support is planned next.
 
 ## Install
 
@@ -14,6 +16,7 @@ npm i fastify-edge --save
 
 ```js
 import FastifyEdge from 'fastify-edge'
+
 const app = FastifyEdge()
 
 app.addHook('onSend', (req, reply, payload) => {
@@ -25,9 +28,14 @@ app.get('/', (req, reply) => {
 })
 ```
 
-## Hooks
+## Supported APIs
+
+
+## Supported hooks
 
 The original Fastify `onRequest`, `onSend` and `onResponse` are supported.
+
+They can be set at the **global** and **route** levels.
 
 ## Limitations
 
