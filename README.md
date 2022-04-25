@@ -91,7 +91,7 @@ Maps to the `fetch` request `headers` object through a `Proxy`.
 </td>
 <td>
 
-The raw `fetch` Request object
+The raw `fetch` request object.
 
 </td>
 </tr>
@@ -109,7 +109,7 @@ The raw `fetch` Request object
 </td>
 <td>
 
-Sets the `fetch` Response `status` property.
+Sets the `fetch` response `status` property.
 
 </td>
 </tr>
@@ -121,7 +121,7 @@ Sets the `fetch` Response `status` property.
 </td>
 <td>
   
-Adds an individual header to the `fetch` Response `headers` object.
+Adds an individual header to the `fetch` response `headers` object.
   
 </td>
 </tr>
@@ -133,67 +133,67 @@ Adds an individual header to the `fetch` Response `headers` object.
 </td>
 <td>
 
-Adds multiple headers to the `fetch` Response `headers` object.
+Adds multiple headers to the `fetch` response `headers` object.
 
 </td>
 </tr>
 <tr>
 <td>
 
-`req.getHeader(header)`
+`reply.getHeader(header)`
 
 </td>
 <td>
 
-Retrieves an individual header from `fetch` Response `headers` object.
-
-</td>
-</tr>
-<tr>
-<td>
-
-`req.getHeaders()`
-
-</td>
-<td>
-
-Retrieves all headers from `fetch` Response `headers` object.
+Retrieves an individual header from `fetch` response `headers` object.
 
 </td>
 </tr>
 <tr>
 <td>
 
-`req.removeHeader(header)`
+`reply.getHeaders()`
 
 </td>
 <td>
 
-Remove an individual header from `fetch` Response `headers` object.
-
-</td>
-</tr>
-<tr>
-<td>
-
-`req.hasHeader(header)`
-
-</td>
-<td>
-
-Asserts presence of an individual header in the `fetch` Response `headers` object.
+Retrieves all headers from `fetch` response `headers` object.
 
 </td>
 </tr>
 <tr>
 <td>
 
-`req.redirect([code,] dest)`
+`reply.removeHeader(header)`
 
 </td>
 <td>
 
-Sets the `statusCode` and redirect `Location` for the `Response` object.
+Remove an individual header from `fetch` response `headers` object.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`reply.hasHeader(header)`
+
+</td>
+<td>
+
+Asserts presence of an individual header in the `fetch` response `headers` object.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`reply.redirect([code,] dest)`
+
+</td>
+<td>
+
+Sets the `status` and redirect location for the `fetch` response object.
 
 </td>
 </tr>
@@ -205,7 +205,7 @@ Sets the `statusCode` and redirect `Location` for the `Response` object.
 </td>
 <td>
 
-Sets the `content-type` header for the `Response` object.
+Sets the `content-type` header for the `fetch` response object.
 
 </td>
 </tr>
