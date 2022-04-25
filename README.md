@@ -36,7 +36,7 @@ See [`example/`](https://github.com/galvez/fastify-edge/tree/main/example) with 
 
 <table>
 <tr>
-<td>
+<td width="33%">
   
 `req.query`
 
@@ -102,7 +102,7 @@ The raw `fetch` request object.
 
 <table>
 <tr>
-<td width="35%">
+<td width="33%">
 
 `reply.code(code)`
 
