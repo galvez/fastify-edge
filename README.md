@@ -231,13 +231,18 @@ Objects are automatically serialized as JSON.
 
 ## Supported hooks
 
-The original Fastify `onRequest`, `onSend` and `onResponse` are supported.
+The original Fastify 
+[`onRequest`](https://www.fastify.io/docs/latest/Reference/Hooks/#onrequest),
+[`onSend`](https://www.fastify.io/docs/latest/Reference/Hooks/#onsend) and 
+[`onResponse`](https://www.fastify.io/docs/latest/Reference/Hooks/#onresponse) are supported.
+
+Diverging from Fastify, they're all treated as **async functions**.
 
 They can be set at the **global** and **route** levels.
 
 ## Limitations
 
-- No support for `preHandler`, `preParsing` and `preValdation` hooks
-- No support for Fastify's plugin system (yet)
-- No support for Fastify's logging and validation facilities
-- Still heavily experimental, more equivalent APIs coming soon
+- No support for `preHandler`, `preParsing` and `preValdation` hooks.
+- No support for Fastify's plugin system (yet).
+- No support for Fastify's logging and validation facilities.
+- Still heavily experimental, more equivalent APIs coming soon.
