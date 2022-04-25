@@ -17,10 +17,10 @@ app.get('/redirect', (_, reply) => {
 });
 
 app.get('/route-hook', {
-  onRequest () {
+  onRequest (_, reply) {
     reply.send('<b>Content from onRequest hook</b>');
   },
-  handler () {
+  handler (_, reply) {
     reply.type('text/html');
   }
 });
