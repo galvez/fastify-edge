@@ -221,7 +221,9 @@ Sets the `content-type` header for the `fetch` response object.
 
 Sets the `body` for the `fetch` response object.<br>
 
-Can be a **string**, an **object** (automatically JSON-serialized), a **buffer** or a **stream**.
+Can be a **string**, an **object**, a **buffer** or a **stream**.
+
+Objects are automatically serialized as JSON.
 
 </td>
 </tr>
