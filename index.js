@@ -3,7 +3,7 @@
 
 import { createRouter } from 'radix3';
 import FastifyEdgeRequest, { readBody } from './request.js';
-import FastifyEdgeReply, { kBody, kResponse } from './reply.js';
+import FastifyEdgeReply, { kBody, kResponse, kRedirect } from './reply.js';
 
 const kHooks = Symbol('kHooks');
 const kRouter = Symbol('kRrouter');
@@ -41,9 +41,8 @@ class FastifyEdge {
         status: 404,
       });
     }
-    const body = await FastifyEdgeRequest.readBody(request);
-    const req = new FastifyEdgeRequest(request, url, body, route);
-    const reply = new FastifyEdgeReply();
+    const req = new FastifyEdgeRequest(request, url, route);
+    const reply = new FastifyEdgeReply(req);
     await req[readBody]();
     await this[runHooks](this[kHooks].onRequest, req, reply);
     await this[runHooks](route.onRequest, req, reply);
@@ -52,7 +51,11 @@ class FastifyEdge {
     await this[runOnSendHooks](route.onSend, req, reply);
     await this[runHooks](this[kHooks].onResponse, req, reply);
     await this[runHooks](route.onResponse, req, reply);
-    return new Response(reply[kBody], reply[kResponse]);
+    if (reply[kRedirect]) {
+      return Response.redirect(...reply[kRedirect]);
+    } else {
+      return new Response(reply[kBody], reply[kResponse]);
+    }
   }
 
   addHook (hook, func) {

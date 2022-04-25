@@ -33,9 +33,10 @@ export default class FastifyEdgeRequest {
   headers = null
   raw = null
   constructor (request, url, route) {
-    this.url = `${url.pathname}${url.search}`
-    this.hostname = this.url.hostname;
-    this.protocol = this.url.protocol.replace(':', '');
+    this.url = `${url.pathname}${url.search}`;
+    this.origin = url.origin;
+    this.hostname = url.hostname;
+    this.protocol = url.protocol.replace(':', '');
     this.raw = request;
     this.query = new Proxy(url.searchParams, {
       get: (params, param) => params.get(param),

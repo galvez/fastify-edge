@@ -23,8 +23,11 @@
 
 const kStatusCode = Symbol('kStatusCode');
 const kHeaders = Symbol('kHeaders');
-const kRedirect = Symbol('kRedirect');
+const kRequest = Symbol('kRequest');
 
+const buildRedirectLocation = Symbol('buildRedirectLocation');
+
+export const kRedirect = Symbol('kRedirect');
 export const kBody = Symbol('kBody');
 export const kResponse = Symbol('kResponse');
 
@@ -38,7 +41,8 @@ export default class FastifyEdgeReply {
     };
   }
 
-  constructor () {
+  constructor (req) {
+    this[kRequest] = req;
     this[kHeaders] = {};
   }
 
@@ -80,9 +84,9 @@ export default class FastifyEdgeReply {
 
   redirect (...args) {
     if (args.length === 1) {
-      this[kRedirect] = [args[1], 302];
+      this[kRedirect] = [this[buildRedirectLocation](args[0]), 302];
     } else {
-      this[kRedirect] = args.reverse();
+      this[kRedirect] = [this[buildRedirectLocation](args[1]), args[0]];
     }
   }
 
@@ -99,5 +103,12 @@ export default class FastifyEdgeReply {
     } else if (typeof data === 'object') {
       this[kBody] = JSON.stringify(data, null, 2);
     }
+  }
+
+  [buildRedirectLocation] (location) {
+    if (!location.startsWith('http')) {
+      return `${this[kRequest].origin}${location}`;
+    }
+    return location;
   }
 }

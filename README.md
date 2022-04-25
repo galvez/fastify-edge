@@ -38,6 +38,55 @@ See [`example/`](https://github.com/galvez/fastify-edge/tree/main/example) with 
 <tr>
 <td width="33%">
   
+`req.url`
+
+</td>
+<td>
+  
+Returns the request URL path (`URL.pathname` + `URL.search`).
+
+</td>
+</tr>
+<tr>
+<td width="33%">
+  
+`req.origin`
+
+</td>
+<td>
+  
+Returns the request URL origin (e.g., `http://localhost:3000`).
+
+</td>
+</tr>
+</tr>
+<tr>
+<td width="33%">
+  
+`req.hostname`
+
+</td>
+<td>
+  
+Returns the request URL hostname (e.g., `localhost`).
+
+</td>
+</tr>
+<tr>
+<td width="33%">
+  
+`req.protocol`
+
+</td>
+<td>
+  
+Returns the request URL protocol (e.g., `http` or `https`).
+
+</td>
+</tr>
+<tr>
+<td>
+  
 `req.query`
 
 </td>
