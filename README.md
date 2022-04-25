@@ -188,12 +188,14 @@ Asserts presence of an individual header in the `fetch` response `headers` objec
 <tr>
 <td>
 
-`reply.redirect([code,] dest)`
+`reply.redirect([code,] dest)`<br>
+`reply.redirect(dest)`
 
 </td>
 <td>
 
-Sets the `status` and redirect location for the `fetch` response object.
+Sets the `status` and redirect location for the `fetch` response object.<br>
+Defaults to the HTTP **302 Found** response code.
 
 </td>
 </tr>
