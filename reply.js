@@ -16,9 +16,9 @@
 // - getResponseTime() ❌
 // - type(contentType) ✅
 // - serializer(func) ❌
-// - raw ✅
 // - sent ❌
 // - hijack() ❌
+// - type (contentType) ✅
 // - send (data) ✅
 
 const kStatusCode = Symbol('kStatusCode');

@@ -2,7 +2,7 @@
 /* global Response */
 
 import { createRouter } from 'radix3';
-import FastifyEdgeRequest from './request.js';
+import FastifyEdgeRequest, { readBody } from './request.js';
 import FastifyEdgeReply, { kBody, kResponse } from './reply.js';
 
 const kHooks = Symbol('kHooks');
@@ -20,6 +20,7 @@ class FastifyEdge {
     onSend: [],
     onResponse: [],
   };
+
   [kRouter] = null;
 
   constructor () {
@@ -40,8 +41,10 @@ class FastifyEdge {
         status: 404,
       });
     }
-    const req = new FastifyEdgeRequest(request, url, route);
+    const body = await FastifyEdgeRequest.readBody(request);
+    const req = new FastifyEdgeRequest(request, url, body, route);
     const reply = new FastifyEdgeReply();
+    await req[readBody]();
     await this[runHooks](this[kHooks].onRequest, req, reply);
     await this[runHooks](route.onRequest, req, reply);
     await route.handler(req, reply);
