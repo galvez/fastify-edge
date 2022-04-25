@@ -1,8 +1,10 @@
 # fastify-edge
 
-An experimental lightweight worker version of Fastify.
+An experimental **lightweight worker version** of [Fastify](https://fastify.io).
 
-Currently **Cloudflare Workers** are supported but **Deno Deploy** support can come next.
+Currently **Cloudflare Workers** are supported.
+
+**Deno Deploy** support is planned next.
 
 ## Install
 
@@ -14,6 +16,7 @@ npm i fastify-edge --save
 
 ```js
 import FastifyEdge from 'fastify-edge'
+
 const app = FastifyEdge()
 
 app.addHook('onSend', (req, reply, payload) => {
@@ -24,6 +27,8 @@ app.get('/', (req, reply) => {
   reply.send('Hello')
 })
 ```
+
+See [`example/`](https://github.com/galvez/fastify-edge/tree/main/example) with [`miniflare`](https://github.com/cloudflare/miniflare).
 
 ## Hooks
 
