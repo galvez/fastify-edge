@@ -217,7 +217,7 @@ Sets the `content-type` header for the `fetch` response object.
 </td>
 <td>
 
-Sets the `body` for the `Response` object.<br>
+Sets the `body` for the `fetch` response object.<br>
 
 Can be a **string**, an **object** (automatically JSON-serialized), a **buffer** or a **stream**.
 
