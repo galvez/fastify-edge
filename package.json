@@ -1,13 +1,18 @@
 {
   "name": "fastify-edge",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "scripts": {
     "lint": "eslint . --ext .js --fix"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./bun": "./bun.js"
   },
   "type": "module",
   "main": "index.js",
   "files": [
     "index.js",
+    "bun.js",
     "reply.js",
     "request.js"
   ],

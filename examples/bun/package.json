@@ -1,0 +1,11 @@
+{
+  "name": "example",
+  "type": "module",
+  "description": "Fastify Edge Bun example",
+  "scripts": {
+    "dev": "bun index.js"
+  },
+  "dependencies": {
+     "fastify-edge": "^0.0.3"
+  }
+}

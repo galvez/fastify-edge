@@ -1,4 +1,4 @@
-import FastifyEdge from '../index.js';
+import FastifyEdge from 'fastify-edge';
 
 const app = FastifyEdge();
 

@@ -6,15 +6,15 @@ import FastifyEdgeRequest, { readBody } from './request.js';
 import FastifyEdgeReply, { kBody, kResponse, kRedirect } from './reply.js';
 
 const kHooks = Symbol('kHooks');
-const kRouter = Symbol('kRrouter');
-
 const handleRequest = Symbol('handleRequest');
-const sendResponse = Symbol('sendResponse');
 const getRoute = Symbol('getRoute');
 const runHooks = Symbol('runHooks');
 const runOnSendHooks = Symbol('runOnSendHooks');
 
-class FastifyEdge {
+export const kRouter = Symbol('kRrouter');
+export const sendResponse = Symbol('sendResponse');
+
+export class FastifyEdge {
   [kHooks] = {
     onRequest: [],
     onSend: [],
@@ -25,6 +25,10 @@ class FastifyEdge {
 
   constructor () {
     this[kRouter] = createRouter();
+    this.setup();
+  }
+
+  setup () {
     addEventListener('fetch', this[handleRequest].bind(this));
   }
 

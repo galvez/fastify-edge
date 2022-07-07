@@ -2,9 +2,7 @@
 
 An experimental **lightweight worker version** of [Fastify](https://fastify.io).
 
-Currently **Cloudflare Workers** are supported.
-
-**Deno Deploy** support is planned next.
+Currently [**Cloudflare Workers**](https://workers.cloudflare.com/) and [**Bun**](https://bun.sh/) are supported.
 
 ## Install
 
@@ -12,21 +10,43 @@ Currently **Cloudflare Workers** are supported.
 npm i fastify-edge --save
 ````
 
-## Usage
+## Usage: Bun
+
+```js
+import FastifyEdge from 'fastify-edge/bun'
+
+const app = FastifyEdge();
+
+app.get('/', (_, reply) => {
+  reply.send('Hello World')
+})
+
+export default app;
+```
+
+See [`examples/bun`](https://github.com/galvez/fastify-edge/tree/main/examples/bun).
+
+## Usage: Cloudflare Workers
 
 ```js
 import FastifyEdge from 'fastify-edge'
 
 const app = FastifyEdge()
 
+app.get('/', (_, reply) => {
+  reply.send('Hello World')
+})
+```
+
+See [`examples/cloudflare`](https://github.com/galvez/fastify-edge/tree/main/examples/cloudflare) with [`miniflare`](https://github.com/cloudflare/miniflare).
+
+## Advanced Example
+
+```js
 app.addHook('onSend', (req, reply, payload) => {
   if (req.url === '/') {
     return `${payload} World!`
   }
-})
-
-app.get('/', (_, reply) => {
-  reply.send('Hello')
 })
 
 app.get('/redirect', (_, reply) => {
@@ -42,8 +62,6 @@ app.get('/route-hook', {
   }
 })
 ```
-
-See [`example/`](https://github.com/galvez/fastify-edge/tree/main/example) with [`miniflare`](https://github.com/cloudflare/miniflare).
 
 ## Supported APIs
 
