@@ -7,7 +7,7 @@
     "miniflare":"^2.4.0"
   },
   "dependencies": {
-     "fastify-edge": "^0.0.3"
+     "fastify-edge": "^0.0.4"
   },
   "main":"./dist/index.js",
   "scripts":{

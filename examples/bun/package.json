@@ -6,6 +6,6 @@
     "dev": "bun index.js"
   },
   "dependencies": {
-     "fastify-edge": "^0.0.3"
+     "fastify-edge": "^0.0.4"
   }
 }

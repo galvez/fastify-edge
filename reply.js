@@ -107,7 +107,6 @@ export default class FastifyEdgeReply {
 
   [buildRedirectLocation] (location) {
     if (!location.startsWith('http')) {
-      console.log(this[kRequest]);
       return `${this[kRequest].protocol}://${this[kRequest].origin}${location}`;
     }
     return location;
